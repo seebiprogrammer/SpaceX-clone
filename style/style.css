@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  background-color: #000;
+}
+
+/* -------------------- */
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #000;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  height: 100px;
+  border-radius: 100px;
+}
+
+/* -------------------- */
+
+section {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+h2,
+h3,
+h4,
+h5,
+a {
+  letter-spacing: 1.5px;
+}
+
+/* -------------------- */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  display: none;
+  transition: 0.6s ease-in;
+}
+
+.overlay.open {
+  display: flex;
+}
+/* -------------------- */
+
+/* .stop-scrolling {
+  overflow: hidden;
+} */
+
+.hidden-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background-color: #000;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 80px 40px 0 0;
+  text-align: end;
+  font-size: 14px;
+  transform: translateX(100%);
+  transition: 0.2s linear 0.1s;
+}
+
+.hidden-menu.open {
+  transform: translateX(0);
+  right: 0;
+}
+
+.hidden-menu ul li {
+  margin-top: 20px;
+}
+
+.hidden-menu ul li a {
+  color: #fff;
+  position: relative;
+  padding-bottom: 5px;
+  transition: 0.6s ease;
+}
+
+.hidden-menu ul li a:hover {
+  color: #aaa;
+}
+
+.hidden-menu ul li a::after {
+  content: "";
+  height: 0.5px;
+  position: absolute;
+  background-color: #aaa;
+  bottom: 0;
+  right: 0;
+  width: 240px;
+}
+
+/* .hidden-menu ul li a::after */
+
+.hidden-menu .mobile-menu {
+  display: none;
+}
+
+/* -------------------- */
+
+.tophead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 0 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.tophead .logo {
+  width: 220px;
+  height: auto;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.tophead .navbar {
+  margin-right: 80px;
+}
+
+.tophead ul {
+  display: flex;
+}
+
+.tophead ul li {
+  margin-right: 25px;
+}
+
+.tophead ul li a {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  padding-bottom: 3px;
+  position: relative;
+}
+
+.tophead ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0);
+  transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+
+.tophead ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.menuicon {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 10;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+}
+
+.menuicon span {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transition: 0.7s ease;
+  margin-top: 5px;
+}
+
+.menuicon .middlebar {
+  transform: translateY(5px);
+}
+
+.menuicon .bottombar {
+  transform: translateY(10px);
+}
+
+.open .topbar {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .middlebar {
+  display: none;
+}
+
+.open .bottombar {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* --------------------- */
+
+.section-1 {
+  background-image: url(../images/section-1.jpg);
+}
+
+.section-2 {
+  background-image: url(../images/section-2.jpg);
+}
+
+.section-3 {
+  background-image: url(../images/section-3.jpg);
+}
+
+.section-4 {
+  background-image: url(../images/section-4.jpg);
+}
+
+section .text {
+  position: absolute;
+  bottom: 150px;
+  left: 100px;
+  color: #fff;
+}
+
+.text h4 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  animation: textAnimate 0.6s ease-in-out 0.2s;
+  animation-fill-mode: both;
+}
+
+.text h2 {
+  font-size: 55px;
+  animation: textAnimate 0.6s ease-in-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  min-width: 130px;
+  height: auto;
+  padding: 15px 30px;
+  text-align: center;
+  border: 2px solid #fff;
+  margin-top: 20px;
+  cursor: pointer;
+  z-index: 2;
+  overflow: hidden;
+  animation: textAnimate 0.6s ease-in-out 0.6s;
+  animation-fill-mode: both;
+}
+
+.btn .hover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: 0.6s ease-in-out;
+  color: #000;
+}
+
+.btn:hover .hover {
+  transform: translateY(0);
+}
+
+.btn span {
+  color: #fff;
+  font-weight: 500;
+  transition: 0.6s ease-in-out;
+}
+
+.btn:hover span {
+  color: #000;
+}
+
+/* ----------------------- */
+
+.footer {
+  position: relative;
+  padding: 50px 0;
+  width: 80%;
+  margin: auto;
+}
+
+.footer .copyrights {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer ul li {
+  margin-right: 30px;
+}
+
+.footer ul li a {
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  transition: 0.6s ease;
+}
+
+.footer ul li a:hover {
+  color: #aaa;
+}
+
+@keyframes textAnimate {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------ */
+@media (max-width: 960px) {
+  .tophead .navbar {
+    display: none;
+  }
+
+  .tophead .logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .hidden-menu .mobile-menu {
+    display: block;
+  }
+
+  section .text {
+    bottom: 50px;
+    left: 50px;
+  }
+
+  .footer .copyrights {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .footer ul {
+    line-height: 2.3;
+  }
+  .footer ul li {
+    margin-right: 15px;
+  }
+}
